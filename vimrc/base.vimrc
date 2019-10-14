@@ -36,6 +36,8 @@ set cursorline
 " === Paste mode toggle
 set pastetoggle=<F2>
 
+" === Spelling toggle
+nmap <F3> :set spell!<CR>
 
 set packpath+=~/.vim/pack/
 
@@ -45,3 +47,5 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" === Enable Powerline fonts
+let g:airline_powerline_fonts = 1

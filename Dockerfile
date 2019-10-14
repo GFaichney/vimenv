@@ -1,3 +1,4 @@
+########### BINARY COMPILE ###########
 FROM alpine:latest as binary
 RUN apk add git
 RUN apk add ncurses-dev
@@ -31,6 +32,7 @@ RUN ./configure --with-features=huge \
             --prefix=/usr/local
 RUN make install
 
+########### BASE ###########
 FROM alpine:latest as base
 RUN apk add musl
 RUN apk add ruby
@@ -45,10 +47,12 @@ WORKDIR /workdir
 RUN apk add git
 RUN git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
 RUN git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+RUN git clone https://github.com/vim-airline/vim-airline-themes.git ~/vim-airline-themes
+RUN mv ~/vim-airline-themes ~/.vim
 
-ENV TERM=${TERM}
+ENV TERM=xterm-256color
 CMD vim .
 
+########### GO ###########
 FROM base as govim
-ENV TERM=xterm-256color
 RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
