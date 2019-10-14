@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker build . --target=govim -t govim
+docker run --rm -it -v ${PWD}:/workdir govim 

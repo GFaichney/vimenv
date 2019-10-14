@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker build . --target=base -t vimenv
+docker run -it -v ${PWD}:/workdir vimenv
