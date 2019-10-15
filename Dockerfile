@@ -55,4 +55,5 @@ CMD vim .
 
 ########### GO ###########
 FROM base as govim
+RUN apk add go
 RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go

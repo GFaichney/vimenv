@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 docker build . --target=govim -t govim
-docker run --rm -it -v ${PWD}:/workdir govim 
+
+# Cols/Lines fix as Docker doesn't always get the terminal size right initially.
+# Solution taken from https://github.com/moby/moby/issues/33794#issuecomment-312873988
+docker run -e COLUMNS="`tput cols`" -e LINES="`tput lines`" --rm -it -v ${PWD}:/workdir govim 
