@@ -47,6 +47,7 @@ WORKDIR /workdir
 RUN apk add git
 RUN git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
 RUN git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+RUN git clone https://github.com/sheerun/vim-polyglot ~/.vim/pack/default/start/vim-polyglot
 RUN git clone https://github.com/vim-airline/vim-airline-themes.git ~/vim-airline-themes
 RUN mv ~/vim-airline-themes ~/.vim
 
@@ -56,4 +57,8 @@ CMD vim .
 ########### GO ###########
 FROM base as govim
 RUN apk add go
-RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+#RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+
+########### Node.js ###########
+FROM base as nodevim
+RUN git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
