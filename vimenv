@@ -7,4 +7,4 @@ docker build ${DIR} --target=base -t vimenv
 
 # Cols/Lines fix as Docker doesn't always get the terminal size right initially.
 # Solution taken from https://github.com/moby/moby/issues/33794#issuecomment-312873988
-docker run -e COLUMNS="`tput cols`" -e LINES="`tput lines`" --rm -it -v ${PWD}:/workdir govim 
+docker run -e COLUMNS="`tput cols`" -e LINES="`tput lines`" --rm -it -v ${PWD}:/workdir vimenv

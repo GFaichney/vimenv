@@ -52,3 +52,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:airline#extensions#tabline#enabled = 1
 " === Enable Powerline fonts
 let g:airline_powerline_fonts = 1
+
+" Colourscheme
+color gruvbox
+set background=dark

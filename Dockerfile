@@ -49,7 +49,10 @@ RUN git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/
 RUN git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 RUN git clone https://github.com/sheerun/vim-polyglot ~/.vim/pack/default/start/vim-polyglot
 RUN git clone https://github.com/vim-airline/vim-airline-themes.git ~/vim-airline-themes
-RUN mv ~/vim-airline-themes ~/.vim
+RUN apk add rsync
+RUN rsync -r ~/vim-airline-themes/ ~/.vim
+RUN git clone https://github.com/rafi/awesome-vim-colorschemes ~/awesome-vim-colorschemes
+RUN rsync -r ~/awesome-vim-colorschemes/ ~/.vim
 
 ENV TERM=xterm-256color
 CMD vim .
@@ -57,7 +60,6 @@ CMD vim .
 ########### GO ###########
 FROM base as govim
 RUN apk add go
-#RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 
 ########### Node.js ###########
 FROM base as nodevim

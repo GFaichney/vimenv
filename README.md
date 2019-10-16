@@ -6,6 +6,10 @@ Create Vim-based dev environments using Docker
 *Plugins:*
 - [NERDTree](https://github.com/scrooloose/nerdtree)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes.git)
+- [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
+- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+- [ALE](https://github.com/dense-analysis/ale.git)
 
 *Keys:*
 - `<F2>` : Toggle paste mode
@@ -13,7 +17,7 @@ Create Vim-based dev environments using Docker
 - `<C-N>` : Toggle NERDTree
 
 ## ./vimenv
-Launch Vim with base setup
+Launch Vim with base setup including vim-polyglot
 
 ## ./vimgo
-Launch Vim with [vim-go](https://github.com/fatih/vim-go) installed **[under construction]** 
+Launch Vim in container with Go installed
