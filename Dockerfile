@@ -57,10 +57,3 @@ RUN rsync -r ~/awesome-vim-colorschemes/ ~/.vim
 ENV TERM=xterm-256color
 CMD vim .
 
-########### GO ###########
-FROM base as govim
-RUN apk add go
-
-########### Node.js ###########
-FROM base as nodevim
-RUN git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
