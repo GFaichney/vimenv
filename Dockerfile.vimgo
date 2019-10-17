@@ -1,0 +1,4 @@
+########### GO ###########
+FROM vimbase:latest as govim
+RUN apk add go
+

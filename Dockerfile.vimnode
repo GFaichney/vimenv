@@ -1,0 +1,3 @@
+########### Node.js ###########
+FROM vimbase:latest as nodevim
+RUN git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
