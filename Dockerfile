@@ -55,5 +55,7 @@ RUN git clone https://github.com/rafi/awesome-vim-colorschemes ~/awesome-vim-col
 RUN rsync -r ~/awesome-vim-colorschemes/ ~/.vim
 
 ENV TERM=xterm-256color
-CMD vim .
+ENTRYPOINT ["vim"]
+CMD ["."]
+
 
