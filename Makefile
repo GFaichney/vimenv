@@ -6,3 +6,6 @@ vimgo: base
 
 vimnode: base
 	docker build . --file=Dockerfile.vimnode -t vimnode:latest
+
+vimpy: base
+	docker build . --file=Dockerfile.vimpy -t vimpy:latest

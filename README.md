@@ -9,7 +9,7 @@ Create Vim-based dev environments using Docker
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes.git)
 - [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
-- [ALE](https://github.com/dense-analysis/ale.git)
+- [python-mode](https://github.com/python-mode/python-mode)
 
 *Keys:*
 - `<F2>` : Toggle paste mode
@@ -21,3 +21,8 @@ Launch Vim with base setup including vim-polyglot
 
 ## ./vimgo
 Launch Vim in container with Go installed
+
+## ./vimpy
+Launch Vim in container with Python installed
+
+
