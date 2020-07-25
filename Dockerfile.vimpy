@@ -1,6 +1,5 @@
 ########### Python ###########
 FROM vimbase:latest as pyvim
-RUN apk add python2
 RUN mkdir -p ~/.vim/pack/python-mode/start
 RUN git clone --recurse-submodules https://github.com/python-mode/python-mode.git ~/.vim/pack/python-mode/start/python-mode
 

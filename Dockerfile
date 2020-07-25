@@ -3,7 +3,7 @@ FROM alpine:latest as binary
 RUN apk add git
 RUN apk add ncurses-dev
 RUN apk add gnome-desktop-dev
-RUN apk add python-dev
+RUN apk add --update --no-cache curl py-pip
 RUN apk add ruby-dev
 RUN apk add lua-dev
 RUN apk add libxpm-dev
@@ -22,9 +22,8 @@ RUN ./configure --with-features=huge \
             --enable-multibyte \
             --enable-rubyinterp=yes \
             --enable-pythoninterp=yes \
-            --with-python-config-dir=/usr/lib/python2.7/config \
             --enable-python3interp=yes \
-            --with-python3-config-dir=/usr/lib/python3.5/config \
+            --with-python3-config-dir=/usr/lib/python3.8/config \
             --enable-perlinterp=yes \
             --enable-luainterp=yes \
             --enable-gui=gtk2 \
@@ -39,6 +38,7 @@ RUN apk add ruby
 RUN apk add gnome-desktop
 RUN apk add libxpm
 RUN apk add lua
+RUN apk add python3
 COPY --from=binary /usr/local/bin/vim /usr/local/bin/vim
 COPY --from=binary /usr/local/share/vim /usr/local/share/vim
 RUN mkdir /workdir
